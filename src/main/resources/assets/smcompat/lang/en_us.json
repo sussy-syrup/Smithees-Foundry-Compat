@@ -1,0 +1,44 @@
+{
+  "block.smitheesfoundry.molten_terminite": "Molten Terminite",
+  "block.smitheesfoundry.molten_aeternium": "Molten Aeternium",
+  "block.smitheesfoundry.molten_thallasium": "Molten Thallasium",
+  "block.smitheesfoundry.molten_enderdust": "Destabilised Ender Dust",
+
+  "material.smitheesfoundry.eternalcrystal.adj": "Eternal Crystal",
+  "material.smitheesfoundry.aeternium.adj": "Aeternium",
+  "material.smitheesfoundry.thallasium.adj": "Thallasium",
+  "material.smitheesfoundry.terminite.adj": "Terminite",
+
+  "material.smitheesfoundry.eternalcrystal": "Eternal Crystal",
+  "material.smitheesfoundry.aeternium": "Aeternium",
+  "material.smitheesfoundry.thallasium": "Thallasium",
+  "material.smitheesfoundry.terminite": "Terminite",
+
+  "wood.smitheesfoundry.lucernia": "Lucernia",
+  "wood.smitheesfoundry.dragon_tree": "Dragon Tree",
+  "wood.smitheesfoundry.helix_tree": "Helix Tree",
+  "wood.smitheesfoundry.mossy_glowshroom": "Mossy Glowshroom",
+  "wood.smitheesfoundry.tenanea": "Tenanea",
+  "wood.smitheesfoundry.end_lotus": "End Lotus",
+  "wood.smitheesfoundry.jellyshroom": "Jellyshroom",
+  "wood.smitheesfoundry.umbrella_tree": "Umbrella Tree",
+  "wood.smitheesfoundry.pythadendron": "Pythadendron",
+  "wood.smitheesfoundry.lacugrove": "Lacugrove",
+
+  "rei.smitheesfoundry.casting": "Casting",
+  "rei.smitheesfoundry.alloying": "Alloying",
+  "rei.smitheesfoundry.part": "Material",
+  "rei.smitheesfoundry.melting": "Melting",
+
+  "tool.smitheesfoundry.durability_mult": "Durability Multiplier: %d",
+
+  "smitheesfoundry.trait.beshift": "Ender Shift",
+  "smitheesfoundry.trait.beeternal": "Eternal",
+  "smitheesfoundry.trait.beancient": "Ancient Hybrid",
+  "smitheesfoundry.trait.bepure": "Pure",
+
+  "smitheesfoundry.trait.beshift.desc": "Teleport 3 blocks forward horizontally.",
+  "smitheesfoundry.trait.beeternal.desc": "Rapid repairing when held.",
+  "smitheesfoundry.trait.beancient.desc": "Ancient and alien. 1.3 damage multiplier, +0.5 swing speed, 1.1 mining speed multiplier and +1.2 mining speed.",
+  "smitheesfoundry.trait.bepure.desc": "+500 durability. Very pure."
+}
