@@ -25,7 +25,8 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation "com.sussysyrup:smithees-foundry:1.5.0-SNAPSHOT"
+	//Contains the latest version of smithees foundry + sussyconfig. This is before the next version
+	modImplementation fileTree(dir: 'Ilibs', include: '*.jar')
 
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:8.2.471"
 	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:8.2.471"

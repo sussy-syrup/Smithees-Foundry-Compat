@@ -10,6 +10,8 @@ import com.sussysyrup.smitheesfoundry.api.casting.CastingResource;
 import com.sussysyrup.smitheesfoundry.api.fluid.*;
 import com.sussysyrup.smitheesfoundry.api.item.PartItem;
 import com.sussysyrup.smitheesfoundry.api.item.ToolItem;
+import com.sussysyrup.smitheesfoundry.api.recipe.ApiEnderResonatorRegistry;
+import com.sussysyrup.smitheesfoundry.api.recipe.EnderResonatorRecipe;
 import com.sussysyrup.smitheesfoundry.registry.BlocksRegistry;
 import com.sussysyrup.smitheesfoundry.registry.ItemsRegistry;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
@@ -30,10 +32,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.DefaultedRegistry;
 import net.minecraft.util.registry.Registry;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class SmitheeFoundryReiClient implements REIClientPlugin {
@@ -62,6 +61,10 @@ public class SmitheeFoundryReiClient implements REIClientPlugin {
             Main.MODID,
             "melting"
     );
+    public static final CategoryIdentifier<ResonatorDisplay> RESONATOR = CategoryIdentifier.of(
+            Main.MODID,
+            "resonator"
+    );;
 
     @Override
     public void registerDisplays(DisplayRegistry registry) {
@@ -69,6 +72,7 @@ public class SmitheeFoundryReiClient implements REIClientPlugin {
         registerAlloying(registry);
         registerPart(registry);
         registerMelting(registry);
+        registerResonator(registry);
     }
 
     @Override
@@ -78,11 +82,13 @@ public class SmitheeFoundryReiClient implements REIClientPlugin {
         registry.add(new PartCategory());
         registry.add(new CastingBlockCategory());
         registry.add(new MeltCategory());
+        registry.add(new ResonatorCategory());
 
         registry.addWorkstations(CASTING, EntryStacks.of(BlocksRegistry.CASTING_TABLE_BLOCK.asItem()));
         registry.addWorkstations(ALLOYING, EntryStacks.of(BlocksRegistry.ALLOY_SMELTERY_CONTROLLER.asItem()));
         registry.addWorkstations(CASTING_BLOCK, EntryStacks.of(BlocksRegistry.CASTING_BASIN_BLOCK));
         registry.addWorkstations(MELTING, EntryStacks.of(BlocksRegistry.ALLOY_SMELTERY_CONTROLLER));
+        registry.addWorkstations(RESONATOR, EntryStacks.of(BlocksRegistry.ENDER_RESONATOR));
     }
 
     @Override
@@ -213,6 +219,25 @@ public class SmitheeFoundryReiClient implements REIClientPlugin {
             outputs.add(EntryIngredients.of(fluidProp.getFluid(), resource.fluidValue()));
 
             registry.add(new MeltDisplay(inputs, outputs));
+        }
+    }
+
+    private void registerResonator(DisplayRegistry registry) {
+        HashMap<Identifier, EnderResonatorRecipe> map = ApiEnderResonatorRegistry.getInstance().getMap();
+
+        EnderResonatorRecipe er;
+
+        for(Identifier id : map.keySet())
+        {
+            List<EntryIngredient> inputs = new ArrayList<>();
+            List<EntryIngredient> outputs = new ArrayList<>();
+
+            inputs.add(EntryIngredients.of(Registry.ITEM.get(id)));
+            er = map.get(id);
+
+            outputs.add(EntryIngredients.of(Registry.FLUID.get(er.fluidID())));
+
+            registry.add(new ResonatorDisplay(inputs, outputs));
         }
     }
 }
