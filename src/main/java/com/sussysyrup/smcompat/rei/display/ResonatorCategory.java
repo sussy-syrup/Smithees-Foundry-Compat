@@ -43,7 +43,7 @@ public class ResonatorCategory implements DisplayCategory<ResonatorDisplay> {
         List<Widget> widgets = new ArrayList<>();
 
         widgets.add(Widgets.createRecipeBase(bounds));
-        
+
         List<EntryIngredient> inputEntries = display.getInputEntries();
 
         List<EntryIngredient> outputEntries = display.getOutputEntries();
