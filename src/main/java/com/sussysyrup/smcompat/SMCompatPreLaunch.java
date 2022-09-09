@@ -10,17 +10,19 @@ public class SMCompatPreLaunch implements PreLaunchEntrypoint {
 
     public static List<String> modidList = new ArrayList<>();
 
-    //betterEnd = betterend
-
-
     public static boolean betterEnd = false;
+    public static boolean betterNether = false;
     @Override
     public void onPreLaunch() {
         FabricLoader.getInstance().getAllMods().forEach(modContainer -> modidList.add(modContainer.getMetadata().getId()));
 
-        if(SMCompatPreLaunch.modidList.contains("betterend"))
+        if(modidList.contains("betterend"))
         {
             betterEnd = true;
+        }
+        if(modidList.contains("betternether"))
+        {
+            betterNether = true;
         }
     }
 }
