@@ -6,7 +6,7 @@ public class SMBetterNether {
 
     public static void initialise()
     {
-        BNPartBenchRegistry.initialise();
+        BNVariationRegistry.initialise();
         BNMaterialRegistry.initialise();
         BNFluidRegistry.initialise();
         BNSmelteryRegistry.initialise();

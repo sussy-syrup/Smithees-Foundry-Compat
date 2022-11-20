@@ -10,7 +10,7 @@ public class SMBetterEnd {
         BEMaterialRegistry.initialise();
         BESmelteryRegistry.initialise();
         BECastingRegistry.initialise();
-        BEPartBenchRegistry.initialise();
+        BEVariationRegistry.initialise();
         BEAlloyRegistry.initialise();
     }
 
