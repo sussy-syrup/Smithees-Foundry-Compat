@@ -25,7 +25,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	//Contains the latest version of smithees foundry + sussyconfig
+	//Contains the latest version of smithees foundry
 	modImplementation fileTree(dir: 'Ilibs', include: '*.jar')
 
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:8.2.471"
@@ -34,7 +34,9 @@ dependencies {
 	/*
 	Contains:
 	BetterEnd
+	BetterNether
 	BCLib
+	Chisel Refabricated
 	 */
 	modCompileOnly fileTree(dir: 'libs', include: '*.jar')
 }

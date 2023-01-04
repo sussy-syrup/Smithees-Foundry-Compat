@@ -17,8 +17,6 @@ public class BNVariationRegistry {
         quickReg2(new Identifier(Main.MODID, "mushroom_fir"), BetterNether.makeID("mushroom_fir"));
         quickReg3(new Identifier(Main.MODID, "anchor_tree"), BetterNether.makeID("anchor_tree"));
         quickReg3(new Identifier(Main.MODID, "nether_sakura"), BetterNether.makeID("nether_sakura"));
-
-        quickRegMetal(new Identifier(Main.MODID, "nether_sakura"), BetterNether.makeID("nether_sakura"));
     }
 
     private static void quickReg(Identifier id, Identifier wood)
